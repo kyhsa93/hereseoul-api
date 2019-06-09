@@ -3,7 +3,7 @@ import { destinations } from '../../controllers';
 export default async (request, response) => {
   try {
     const {
-      categoryGroupCode, x, y, radius,
+      categoryGroupCode, x, y, radius, page,
     } = request.query;
 
     if (!categoryGroupCode) {
@@ -17,6 +17,10 @@ export default async (request, response) => {
     }
     if (!radius) {
       return response.status(400).send('invalid radius');
+    }
+
+    if (!page || page > 45) {
+      return response.status(400).send('invalid page');
     }
 
     const { code, data } = await destinations.list(request.query);

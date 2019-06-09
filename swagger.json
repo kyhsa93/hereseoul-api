@@ -1,0 +1,87 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "HereSeoul api",
+    "description": "HereSeoul api description",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "paths": {
+    "/categories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ]
+      }
+    },
+    "/destinations": {
+      "get": {
+        "tags": [
+          "Destinations"
+        ],
+        "parameters": [{
+          "name": "x",
+          "in": "query",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "y",
+          "in": "query",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "radius",
+          "in": "query",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "categoryGroupCode",
+          "in": "query",
+          "required": true,
+          "type": "string"
+        }]
+      }
+    },
+    "/paths": {
+      "get": {
+        "tags": [
+          "Paths"
+        ],
+        "parameters": [{
+          "name": "startX",
+          "in": "query",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "startY",
+          "in": "query",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "endX",
+          "in": "query",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "endY",
+          "in": "query",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": true,
+          "type": "string"
+        }]
+      }
+    }
+  }
+}

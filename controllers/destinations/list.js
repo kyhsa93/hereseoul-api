@@ -6,7 +6,7 @@ export default async (params) => {
     categoryGroupCode, x, y, radius, page,
   } = params;
 
-  const query = `?category_group_code=${categoryGroupCode}&x=${x}&y=${y}&radius=${radius}&page=${page}`;
+  const query = `?category_group_code=${categoryGroupCode}&x=${x}&y=${y}&radius=${radius}&page=${page}&sort=distance`;
 
   const result = await request({
     ...config.kakao.dapi, url: config.kakao.dapi.url + query,
